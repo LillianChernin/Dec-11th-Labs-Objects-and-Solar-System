@@ -220,3 +220,39 @@ const PlanetX = {
 
 system.PlanetX = PlanetX;
 console.log(system);
+
+
+const movies = [
+               { title: "L'Avventura", director: "Michelangelo Antonioni", year: 1960 },
+               { title: "Eraserhead", director: "David Lynch", year: 1978 },
+               { title: "Dayereh", director: "Jafar Panahi", year: 2000 }
+             ];
+const order = (a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  } else if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+}
+// console.log(movies.sort(order));
+
+//ADVANCED (Bonus material)
+// 1.
+console.log(solarSystem.sort(order));
+
+// 2.
+const sortArrayOfObjects = (arr, key) => {
+  return arr.sort((a, b) => {
+    if (a[key] < b[key]) {
+      return -1;
+    } else if (a[key] > b[key]) {
+      return 1;
+    }
+    return 0;
+  })
+}
+
+console.log(sortArrayOfObjects(movies, "title"));
+console.log(sortArrayOfObjects(movies, "year"));
+console.log(sortArrayOfObjects(movies, "director"));
